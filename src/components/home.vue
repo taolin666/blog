@@ -86,9 +86,7 @@ import AMap from 'AMap';
           url: 'location',
           params
         }).then(res => {
-          if (res.code === 0) {
-            // this.titleInfo = res.message.alert;
-          } else {
+          if (res.code === 0) {} else {
             this.$message.error(res.message || '接口调用的code不是0');
           }
         })
