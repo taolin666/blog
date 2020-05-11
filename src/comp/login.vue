@@ -71,9 +71,9 @@
       window.sessionStorage.removeItem('token')
     },
     methods: {
-      ...mapMutations([
-        'setPhone'
-      ]),
+      // ...mapMutations([
+      //   'setPhone'
+      // ]),
       submitForm(formName) {
         this.$refs[formName].validate((valid) => {
           if (valid) {
@@ -90,7 +90,8 @@
               if (res.code === 0 && res.token) {
                 window.sessionStorage.removeItem('token')
                 window.sessionStorage.setItem('token', JSON.stringify(res.token))
-                this.setPhone(this.ruleForm.tel)
+                // this.setPhone(this.ruleForm.tel)
+                this.$store.commit('setPhone', this.ruleForm.tel)
                 this.$message.success('登陆成功');
                 this.$router.push('/')
               } else {

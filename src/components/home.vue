@@ -54,9 +54,9 @@ import { mapState } from 'vuex'
 import AMap from 'AMap';
   export default {
     computed: {
-      ...mapState([
-        'phone'
-      ])
+      // ...mapState([
+      //   'phone'
+      // ])
     },
     components: {
       Aside,
@@ -80,7 +80,7 @@ import AMap from 'AMap';
       init() {
         let params = {
           location: this.localtion,
-          phone: this.phone || '000'
+          phone: this.$store.state.phone || '000'
         }
         this.$http({
           url: 'location',

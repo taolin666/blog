@@ -21,7 +21,7 @@
           <el-dropdown-item @click.native="toLogin">登陆</el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
-      <span @click="drawer = true" style="padding:0 15px;">{{phone}}</span>
+      <span @click="drawer = true" style="padding:0 15px;">{{this.$store.state.phone}}</span>
     </div>
   </el-header>
   <el-drawer
@@ -60,9 +60,9 @@
   import { mapState } from 'vuex'
   export default {
     computed: {
-      ...mapState([
-        'phone'
-      ])
+      // ...mapState([
+      //   'phone'
+      // ])
     },
     data() {
       return {
